@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+Title: Development of a Simple Blockchain Credit System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objective: Design and implement a simple web3 application that showcases your understanding of blockchain technology and smart contract development. The application will demonstrate
+a simple credit system using a smart contract deployed on any test network (like Ropsten or Rinkeby).
 
-## Available Scripts
+ Description:
 
-In the project directory, you can run:
+1. *Smart Contract Development*
 
-### `npm start`
+Account Structure:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+a. Each account is represented by an Ethereum address.
+The credit balance of each account is stored in a mapping called balances, where the key is the account address, and the value is the credit balance.
+Initialization:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+b.When the credit system contract is deployed, each account is assigned a default credit balance of 1000 (or any other initial value you choose).
+Credit Transfer:
 
-### `npm test`
+c.The contract includes a function transferCredits that allows accounts to transfer credits to other accounts.
+The function takes two parameters: the recipient's account address and the amount of credits to be transferred.
+Before executing the transfer, the function checks if the sender has a sufficient credit balance to perform the transfer.
+If the sender has enough credits, the specified amount is deducted from their balance and added to the recipient's balance.
+Credit Balance Inquiry:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+d. The contract includes a function getBalance that allows users to query the credit balance of a given account.
+The function takes the account address as a parameter and returns the corresponding credit balance from the balances mapping. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. *Smart Contract Deployment*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+contract is Deployed on the Ethereum testnet (Ropsten or Rinkeby). In this project i have used Hardhat for this purpose. contract address : 0x42604eC59D8dB5690D2FA8C78F29De90505f77e4
+3. *Frontend Integration*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+a simple front-end interface is Developed using React Framework:
 
-### `npm run eject`
+- Connect to a user's Metamask wallet.
+- Display the user's current credit balance (by interacting with the smart contract).
+- Allow users to transfer credits to other users (by invoking the appropriate function on the smart contract).
+- Handle errors (like if a user tries to send more credits than they have) and provide appropriate user feedback.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Outcome : -
+![Screenshot 2023-05-30 100510](https://github.com/NikeVir/simple-credit-system/assets/82455622/d80ad7d2-3595-4295-b160-a519b3566856)
+![Screenshot 2023-05-30 100545](https://github.com/NikeVir/simple-credit-system/assets/82455622/40125972-6868-49f3-8663-0490e0879fb1)
+![Screenshot 2023-05-30 100730](https://github.com/NikeVir/simple-credit-system/assets/82455622/8f165199-ff25-46a7-a5e6-95c5cd10939d)
+![Screenshot 2023-05-30 100819](https://github.com/NikeVir/simple-credit-system/assets/82455622/17df6fa9-6ce2-4ee0-837a-d93f075d173f)
+![Screenshot 2023-05-30 100900](https://github.com/NikeVir/simple-credit-system/assets/82455622/4908c3ea-cffd-4c93-9ac4-54ef637e16c1)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
